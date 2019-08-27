@@ -1,4 +1,4 @@
-FROM php:7.2-fpm-alpine3.10
+FROM php:7.3-fpm-alpine3.10
 
 # Install gmp
 RUN apk add --no-cache gmp gmp-dev
