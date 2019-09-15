@@ -12,8 +12,10 @@ RUN apk add --no-cache autoconf g++ make openssl-dev && \
     apk add --no-cache --virtual .mongodb-ext-build-deps pcre-dev && \
     pecl install mongodb && \
     apk del .mongodb-ext-build-deps && \
+    pecl install opencensus-alpha && \
     pecl clear-cache && \
     docker-php-ext-enable mongodb && \
+    docker-php-ext-enable opencensus && \
     docker-php-source delete
 
 # install imagemagick
