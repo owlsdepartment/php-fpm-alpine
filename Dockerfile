@@ -27,6 +27,7 @@ RUN apk add --no-cache --virtual building-deps autoconf g++ make openssl-dev tar
     && make test \
     && make install \
     && docker-php-ext-enable opencensus \
+    && cd /var/www \
     && rm -rf "opencensus-php-${OPENCENSUS_VERSION}" opencensus.tar.gz \
     && apk del building-deps
 
