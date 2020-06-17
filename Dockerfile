@@ -39,3 +39,6 @@ RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
     && mv /tmp/blackfire/blackfire-*.so $(php -r "echo ini_get ('extension_dir');")/blackfire.so \
     && docker-php-ext-enable blackfire \
     && rm -rf /tmp/blackfire /tmp/blackfire-probe.tar.gz
+
+## SUPERVISOR
+RUN apk add --no-cache supervisor
