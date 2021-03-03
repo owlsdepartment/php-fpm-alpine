@@ -8,6 +8,10 @@ WORKDIR /var/www
 RUN apk add --no-cache gmp gmp-dev imagemagick \
     && docker-php-ext-configure opcache --enable-opcache \
     && docker-php-ext-install gmp mysqli pdo_mysql opcache
+    
+## SqlLite
+RUN docker-php-ext-install pdo_sqlite \
+    && docker-php-ext-enable pdo_sqlite
 
 ## MONGO REDIS
 RUN apk add --no-cache --virtual building-deps autoconf g++ make openssl-dev \
